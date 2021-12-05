@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>tzettel - small helper for daily timesheets 📝</title>
+
+		
+
+		<link rel="modulepreload" href="/tzettel/_app/start-09479029.js">
+		<link rel="modulepreload" href="/tzettel/_app/chunks/vendor-b32ae2ae.js">
+		<link rel="modulepreload" href="/tzettel/_app/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/tzettel/_app/pages/__layout.svelte-43b094e7.js">
+		<link rel="modulepreload" href="/tzettel/_app/pages/index.svelte-45ded6ff.js">
+		<link rel="stylesheet" href="/tzettel/_app/assets/start-c446e5f0.css">
+		<link rel="stylesheet" href="/tzettel/_app/assets/pages/__layout.svelte-0d4562c3.css">
+
+		<script type="module">
+			import { start } from "/tzettel/_app/start-09479029.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/tzettel","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/tzettel/_app/pages/__layout.svelte-43b094e7.js"),
+						import("/tzettel/_app/pages/index.svelte-45ded6ff.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<header class="svelte-1k4umzn"><div class="container"><nav class="navbar navbar-expand-lg navbar-light svelte-1k4umzn"><div class="container-fluid"><a class="navbar-brand" href="/tzettel/">tzettel</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul></div></div></nav></div>
+</header>
+
+<main><div class="container py-5"><div class="row"><div class="col-12"><h1 class="py-2">tzettel 📝</h1>
+			<div class="sub-title">Tiny helper for chaotic workdays.</div></div></div>
+	<div class="row py-4"><div class="col-md-4"><b>Just paste your timesheet notes!</b><br>You can take them beforehand in Notepad++,
+			TextEdit, Sublime, handwritten, what ever you like. ;)<br><br>
+			</div>
+		<div class="col-md-4"><b>#ProTip 1: Hashtag grouping</b><br>
+			Use a hashtag at the beginning to group entries, e.g. tasks related to a project. These entries
+			will be later combined into one entry.
+		</div>
+		<div class="col-md-4"><b>#ProTip 2: General tasks </b><br>
+			Entries without a hashtag in the beginning will be combined into the &quot;General&quot; entry.
+		</div></div>
+	
+	<form><div class="mb-3"><label for="timesheetNotes" class="form-label">Paste your notes:</label>
+			<textarea class="form-control" id="timesheetNotes" rows="6" cols="75">9:15 - 9:45 Getting organized
+9:45 - 10:00 Stand-Up Meeting
+10:00 - 12:00 #ClientTessa Website prototyping start page
+Lunch Break (this line will just be ignored - feel free to take other notes as well)
+12:00 - 12:30 #ClientMark CSS Bugfix for category pages
+12:30 - 14:00 #ClientTessa Website prototyping details page</textarea></div>
+		</form>
+
+	<section class="py-4"><h2>Your report</h2>
+
+		<table class="table"><thead><tr><th scope="col">#</th>
+					<th scope="col">Time</th>
+					<th scope="col">Project</th>
+					<th scope="col">Tasks done ✅</th></tr></thead>
+			<tbody><tr><th scope="row">0</th>
+						<td>09:15 - 10:00</td>
+						<td>#General</td>
+						<td>Getting organized, Stand-Up Meeting</td>
+					</tr><tr><th scope="row">1</th>
+						<td>10:00 - 13:30</td>
+						<td>#ClientTessa</td>
+						<td>Website prototyping start page, Website prototyping details page</td>
+					</tr><tr><th scope="row">2</th>
+						<td>13:30 - 14:00</td>
+						<td>#ClientMark</td>
+						<td>CSS Bugfix for category pages</td>
+					</tr></tbody></table></section>
+
+	<section><h4>Parsing summary</h4>
+		<p>This is only for debugging, here is what the algorithm detected in your notes:</p>
+		<p><!-- HTML_TAG_START --><mark>9</mark>:<mark>15</mark>-<mark>9</mark>:<mark>45</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Getting organized</mark><br><mark>9</mark>:<mark>45</mark>-<mark>10</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Stand-Up Meeting</mark><br><mark>10</mark>:<mark>00</mark>-<mark>12</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping start page</mark><br>Lunch Break (this line will just be ignored - feel free to take other notes as well)<br><mark>12</mark>:<mark>00</mark>-<mark>12</mark>:<mark>30</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>CSS Bugfix for category pages</mark><br><mark>12</mark>:<mark>30</mark>-<mark>14</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping details page</mark><!-- HTML_TAG_END --></p></section></div></main>
+
+<footer class="footer mt-auto py-3 bg-white"><div class="container text-center bg-white text-dark"><a href="/imprint-privacy" class="link-secondary">Imprint &amp; Privacy</a> |
+		<a href="/tzettel/bootstrap-test" class="link-secondary">Bootstrap-Test</a>
+		| (Open) Source code:
+		<a href="https://github.com/mandrasch/tzettel" class="link-secondary">GitHub</a></div>
+</footer>
+
+
+
+			
+		</div>
+	</body>
+</html>

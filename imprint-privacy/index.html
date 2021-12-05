@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>tzettel - small helper for daily timesheets 📝</title>
+
+		
+
+		<link rel="modulepreload" href="/tzettel/_app/start-09479029.js">
+		<link rel="modulepreload" href="/tzettel/_app/chunks/vendor-b32ae2ae.js">
+		<link rel="modulepreload" href="/tzettel/_app/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/tzettel/_app/pages/__layout.svelte-43b094e7.js">
+		<link rel="modulepreload" href="/tzettel/_app/pages/imprint-privacy.svelte-0da3649e.js">
+		<link rel="stylesheet" href="/tzettel/_app/assets/start-c446e5f0.css">
+		<link rel="stylesheet" href="/tzettel/_app/assets/pages/__layout.svelte-0d4562c3.css">
+
+		<script type="module">
+			import { start } from "/tzettel/_app/start-09479029.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/tzettel","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/tzettel/_app/pages/__layout.svelte-43b094e7.js"),
+						import("/tzettel/_app/pages/imprint-privacy.svelte-0da3649e.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fimprint-privacy",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<header class="svelte-1k4umzn"><div class="container"><nav class="navbar navbar-expand-lg navbar-light svelte-1k4umzn"><div class="container-fluid"><a class="navbar-brand" href="/tzettel/">tzettel</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul></div></div></nav></div>
+</header>
+
+<main><div class="container py-5"><h2>Privacy</h2>
+	<p>tzettel does not store any personal data, IP address logging and statistics are disabled
+		server-side.
+	</p>
+
+	<p>🌱 Hosted on green webspace provider <a href="https://www.manitu.de/">Manitu</a>, officially
+		listed in the
+		<a href="https://www.thegreenwebfoundation.org/directory/">Green Hosting Directory</a>.
+	</p>
+
+	<h2>Imprint</h2>
+	<p>For contact details and full imprint, please see: <a href="https://matthias-andrasch.eu/blog/impressum-datenschutz/">Impressum &amp; Datenschutz</a>.
+	</p></div></main>
+
+<footer class="footer mt-auto py-3 bg-white"><div class="container text-center bg-white text-dark"><a href="/imprint-privacy" class="link-secondary">Imprint &amp; Privacy</a> |
+		<a href="/tzettel/bootstrap-test" class="link-secondary">Bootstrap-Test</a>
+		| (Open) Source code:
+		<a href="https://github.com/mandrasch/tzettel" class="link-secondary">GitHub</a></div>
+</footer>
+
+
+
+			
+		</div>
+	</body>
+</html>
