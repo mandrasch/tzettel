@@ -41,6 +41,7 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 		}
 	*/
 	]);
+	let totalWorkMinutes = writable(0);
 
 	// store binding
 	// TODO: add delay, otherwise this is triggered very often?
@@ -57,7 +58,7 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 		// start of work day, we add minutes to that
 		var currentWorkDayDate = null;
 		var originalWorkDayStartDate = null;
-		var totalWorkMinutes = 0;
+		totalWorkMinutes.update((val) => 0); // reset
 
 		// TODO parse & generate results
 		let timeSlotStore = {}; // TODO: use svelte store for this as well
@@ -158,7 +159,7 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 			);
 
 			// add minutes to global minutes
-			totalWorkMinutes = totalWorkMinutes + timeSlotStore[key].minutesTotal;
+			totalWorkMinutes.update((val) => val + timeSlotStore[key].minutesTotal);
 
 			// add entry
 
@@ -174,11 +175,12 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 					':' +
 					getMinutesWithLeadingZeros(currentWorkDayDate),
 				project: key,
-				notesCombined: timeSlotStore[key].notesCombined
+				notesCombined: timeSlotStore[key].notesCombined,
+				totalMinutes: timeSlotStore[key].minutesTotal
 			});
-		}
+		} // eo for
 
-		// update store
+		// update store with all new entries
 		timesheetResults.update((val) => resultEntries);
 
 		// TODO implement: $('#totalWorkHours').html(totalWorkMinutes / 60);
@@ -189,7 +191,9 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 	<div class="row">
 		<div class="col-12">
 			<h1 class="py-2">tzettel 📝</h1>
-			<div class="sub-title">Tiny helper for chaotic workdays.</div>
+			<div class="sub-title">
+				<i>Tiny helper for chaotic workdays, which merges tasks for clean reports.</i>
+			</div>
 		</div>
 	</div>
 	<div class="row py-4">
@@ -230,9 +234,10 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Time</th>
+					<th scope="col">Fictional time</th>
 					<th scope="col">Project</th>
 					<th scope="col">Tasks done ✅</th>
+					<th scope="col">Hours</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -242,8 +247,16 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 						<td>{entry.timeFrom} - {entry.timeUntil}</td>
 						<td>{entry.project}</td>
 						<td>{entry.notesCombined}</td>
+						<td>{Number.parseFloat(entry.totalMinutes / 60).toFixed(2)}</td>
 					</tr>
 				{/each}
+				<tr>
+					<th scope="row" />
+					<td />
+					<td />
+					<td />
+					<td><b>{Number.parseFloat($totalWorkMinutes / 60).toFixed(2)}</b></td>
+				</tr>
 			</tbody>
 		</table>
 	</section>
