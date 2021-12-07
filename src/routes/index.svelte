@@ -15,9 +15,12 @@
 	let defaultTimesheetNotes = `9:15 - 9:45 Getting organized
 9:45 - 10:00 Stand-Up Meeting
 10:00 - 12:00 #ClientTessa Website prototyping start page
-Lunch Break (this line will just be ignored - feel free to take other notes as well)
 12:00 - 12:30 #ClientMark CSS Bugfix for category pages
-12:30 - 14:00 #ClientTessa Website prototyping details page`;
+
+13:30 - 14:15 #ClientTessa Website prototyping details page
+14:15 - 17:10 #ClientMark Javascript fix for fixed header navigation
+17:10 - 18:00 #ClientTessa Website deployment details page
+`;
 
 	// create store, input from user (from textarea)
 	let timesheetNotes = writable(defaultTimesheetNotes);
@@ -143,9 +146,10 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 
 		// generate time report
 		let resultEntries = [];
+		let breakTaken = false;
 		for (var key in timeSlotStore) {
 			console.log(key, timeSlotStore[key].minutesTotal, timeSlotStore[key].notesCombined);
-			// calculate time from beginning of day
+			// store current date for timeFrom
 			let oldWorkDayDate = currentWorkDayDate;
 			console.log(
 				'current',
@@ -153,18 +157,41 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 				currentWorkDayDate.getHours(),
 				currentWorkDayDate.getMinutes()
 			);
+
+			// & add minutes to global minutes
+			totalWorkMinutes.update(function (currentVal) {
+				// check if break would be needed
+				if (!breakTaken && currentVal + timeSlotStore[key].minutesTotal >= 6 * 60) {
+					// add a break entry
+					currentWorkDayDate = new Date(currentWorkDayDate.getTime() + 30 * 60000);
+					resultEntries.push({
+						timeFrom:
+							getHoursWithLeadingZeros(oldWorkDayDate) +
+							':' +
+							getMinutesWithLeadingZeros(oldWorkDayDate),
+						timeUntil:
+							getHoursWithLeadingZeros(currentWorkDayDate) +
+							':' +
+							getMinutesWithLeadingZeros(currentWorkDayDate),
+						project: 'Break',
+						notesCombined: '',
+						totalMinutes: 0
+					});
+					breakTaken = true;
+					// set the date values again for timeFrom and timeUntil
+					oldWorkDayDate = currentWorkDayDate;
+				}
+
+				return currentVal + timeSlotStore[key].minutesTotal;
+			});
+
+			// add minutes of current entry in timeSlotStore to the Date()
 			console.log('add', timeSlotStore[key].minutesTotal * 60000);
 			currentWorkDayDate = new Date(
 				currentWorkDayDate.getTime() + timeSlotStore[key].minutesTotal * 60000
 			);
 
-			// add minutes to global minutes
-			totalWorkMinutes.update((val) => val + timeSlotStore[key].minutesTotal);
-
-			// add entry
-
-			// TODO: use https://momentjs.com/ to get hh:mm format instead of 8:0 with missing last zero?
-			// or better wer?
+			// add entry for timesheet
 			resultEntries.push({
 				timeFrom:
 					getHoursWithLeadingZeros(oldWorkDayDate) +
@@ -247,7 +274,11 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 						<td>{entry.timeFrom} - {entry.timeUntil}</td>
 						<td>{entry.project}</td>
 						<td>{entry.notesCombined}</td>
-						<td>{Number.parseFloat(entry.totalMinutes / 60).toFixed(2)}</td>
+						<td>
+							{#if Number.parseFloat(entry.totalMinutes / 60).toFixed(2) > 0}
+								{Number.parseFloat(entry.totalMinutes / 60).toFixed(2)}
+							{/if}
+						</td>
 					</tr>
 				{/each}
 				<tr>
