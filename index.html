@@ -9,16 +9,16 @@
 
 		
 
-		<link rel="modulepreload" href="/tzettel/_app/start-f5f16ecd.js">
+		<link rel="modulepreload" href="/tzettel/_app/start-5d9a7500.js">
 		<link rel="modulepreload" href="/tzettel/_app/chunks/vendor-b32ae2ae.js">
 		<link rel="modulepreload" href="/tzettel/_app/chunks/paths-28a87002.js">
 		<link rel="modulepreload" href="/tzettel/_app/pages/__layout.svelte-43b094e7.js">
-		<link rel="modulepreload" href="/tzettel/_app/pages/index.svelte-a473da80.js">
+		<link rel="modulepreload" href="/tzettel/_app/pages/index.svelte-0a8a4bc2.js">
 		<link rel="stylesheet" href="/tzettel/_app/assets/start-c446e5f0.css">
 		<link rel="stylesheet" href="/tzettel/_app/assets/pages/__layout.svelte-0d4562c3.css">
 
 		<script type="module">
-			import { start } from "/tzettel/_app/start-f5f16ecd.js";
+			import { start } from "/tzettel/_app/start-5d9a7500.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/tzettel","assets":""},
@@ -32,7 +32,7 @@
 					error: null,
 					nodes: [
 						import("/tzettel/_app/pages/__layout.svelte-43b094e7.js"),
-						import("/tzettel/_app/pages/index.svelte-a473da80.js")
+						import("/tzettel/_app/pages/index.svelte-0a8a4bc2.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -72,9 +72,12 @@
 			<textarea class="form-control" id="timesheetNotes" rows="6" cols="75">9:15 - 9:45 Getting organized
 9:45 - 10:00 Stand-Up Meeting
 10:00 - 12:00 #ClientTessa Website prototyping start page
-Lunch Break (this line will just be ignored - feel free to take other notes as well)
 12:00 - 12:30 #ClientMark CSS Bugfix for category pages
-12:30 - 14:00 #ClientTessa Website prototyping details page</textarea></div>
+
+13:30 - 14:15 #ClientTessa Website prototyping details page
+14:15 - 17:10 #ClientMark Javascript fix for fixed header navigation
+17:10 - 18:00 #ClientTessa Website deployment details page
+</textarea></div>
 		</form>
 
 	<section class="py-4"><h2>Your report</h2>
@@ -90,25 +93,30 @@ Lunch Break (this line will just be ignored - feel free to take other notes as w
 						<td>Getting organized, Stand-Up Meeting</td>
 						<td>0.75</td>
 					</tr><tr><th scope="row">1</th>
-						<td>10:00 - 13:30</td>
+						<td>10:00 - 13:35</td>
 						<td>#ClientTessa</td>
-						<td>Website prototyping start page, Website prototyping details page</td>
-						<td>3.50</td>
+						<td>Website prototyping start page, Website prototyping details page, Website deployment details page</td>
+						<td>3.58</td>
 					</tr><tr><th scope="row">2</th>
-						<td>13:30 - 14:00</td>
+						<td>13:35 - 14:05</td>
+						<td>Break</td>
+						<td></td>
+						<td></td>
+					</tr><tr><th scope="row">3</th>
+						<td>14:05 - 17:30</td>
 						<td>#ClientMark</td>
-						<td>CSS Bugfix for category pages</td>
-						<td>0.50</td>
+						<td>CSS Bugfix for category pages, Javascript fix for fixed header navigation</td>
+						<td>3.42</td>
 					</tr>
 				<tr><th scope="row"></th>
 					<td></td>
 					<td></td>
 					<td></td>
-					<td><b>4.75</b></td></tr></tbody></table></section>
+					<td><b>7.75</b></td></tr></tbody></table></section>
 
 	<section><h4>Parsing summary</h4>
 		<p>This is only for debugging, here is what the algorithm detected in your notes:</p>
-		<p><!-- HTML_TAG_START --><mark>9</mark>:<mark>15</mark>-<mark>9</mark>:<mark>45</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Getting organized</mark><br><mark>9</mark>:<mark>45</mark>-<mark>10</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Stand-Up Meeting</mark><br><mark>10</mark>:<mark>00</mark>-<mark>12</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping start page</mark><br>Lunch Break (this line will just be ignored - feel free to take other notes as well)<br><mark>12</mark>:<mark>00</mark>-<mark>12</mark>:<mark>30</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>CSS Bugfix for category pages</mark><br><mark>12</mark>:<mark>30</mark>-<mark>14</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping details page</mark><!-- HTML_TAG_END --></p></section></div></main>
+		<p><!-- HTML_TAG_START --><mark>9</mark>:<mark>15</mark>-<mark>9</mark>:<mark>45</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Getting organized</mark><br><mark>9</mark>:<mark>45</mark>-<mark>10</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Stand-Up Meeting</mark><br><mark>10</mark>:<mark>00</mark>-<mark>12</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping start page</mark><br><mark>12</mark>:<mark>00</mark>-<mark>12</mark>:<mark>30</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>CSS Bugfix for category pages</mark><br><br><mark>13</mark>:<mark>30</mark>-<mark>14</mark>:<mark>15</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping details page</mark><br><mark>14</mark>:<mark>15</mark>-<mark>17</mark>:<mark>10</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>Javascript fix for fixed header navigation</mark><br><mark>17</mark>:<mark>10</mark>-<mark>18</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website deployment details page</mark><br><!-- HTML_TAG_END --></p></section></div></main>
 
 <footer class="footer mt-auto py-3 bg-white"><div class="container text-center bg-white text-dark"><a href="/imprint-privacy" class="link-secondary">Imprint &amp; Privacy</a> |
 		<a href="/tzettel/bootstrap-test" class="link-secondary">Bootstrap-Test</a>
