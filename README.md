@@ -18,6 +18,7 @@ Learning project protype built with
 ## Todos
 
 - [ ] Integrate bootstrap js for mobile nav toggle, etc.
+- [ ] Add (optional) setting: Show fictional time & add mandatory legal breaks
 - [ ] Add option for non-billable projects, e.g. `#!ProjectName`?
 - [ ] Add diagrams
 - [x] Bug: body styles are stripped out by vite?
