@@ -18,7 +18,8 @@ Learning project protype built with
 ## Todos
 
 - [ ] Integrate bootstrap js for mobile nav toggle, etc.
-- [ ] Use sveltestrap for interactivity?
+- [ ] Add option for non-billable projects, e.g. `#!ProjectName`?
+- [ ] Add diagrams
 - [x] Bug: body styles are stripped out by vite?
   - https://github.com/bestguy/sveltestrap/issues/222#issuecomment-760111545
   - https://stackoverflow.com/questions/63299785/how-to-setup-global-bootstrap-via-scss-in-svelte

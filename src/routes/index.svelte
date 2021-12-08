@@ -1,5 +1,6 @@
 <script>
 	import { writable } from 'svelte/store';
+	import Pie from 'svelte-chartjs/src/Pie.svelte';
 
 	// helpers
 	// https://www.w3resource.com/javascript-exercises/javascript-date-exercise-35.php
@@ -211,7 +212,60 @@
 		timesheetResults.update((val) => resultEntries);
 
 		// TODO implement: $('#totalWorkHours').html(totalWorkMinutes / 60);
-	});
+	}); // eo subscrice
+
+	const pieDataAllEntries = {
+		labels: ['General', '#ClientMark', '#ClientTessa'],
+		datasets: [
+			{
+				label: '% of Votes',
+				data: [3.75, 2, 3],
+				backgroundColor: [
+					'rgba(255, 134,159,0.4)',
+					'rgba(98,  182, 239,0.4)',
+					'rgba(255, 218, 128,0.4)',
+					'rgba(113, 205, 205,0.4)',
+					'rgba(170, 128, 252,0.4)',
+					'rgba(255, 177, 101,0.4)'
+				],
+				borderWidth: 2,
+				borderColor: [
+					'rgba(255, 134, 159, 1)',
+					'rgba(98,  182, 239, 1)',
+					'rgba(255, 218, 128, 1)',
+					'rgba(113, 205, 205, 1)',
+					'rgba(170, 128, 252, 1)',
+					'rgba(255, 177, 101, 1)'
+				]
+			}
+		]
+	};
+	const pieDataSummary = {
+		labels: ['General time', 'Client / Project work time (Billable)'],
+		datasets: [
+			{
+				label: '% of Votes',
+				data: [3.75, 4],
+				backgroundColor: [
+					'rgba(255, 134,159,0.4)',
+					'rgba(98,  182, 239,0.4)',
+					'rgba(255, 218, 128,0.4)',
+					'rgba(113, 205, 205,0.4)',
+					'rgba(170, 128, 252,0.4)',
+					'rgba(255, 177, 101,0.4)'
+				],
+				borderWidth: 2,
+				borderColor: [
+					'rgba(255, 134, 159, 1)',
+					'rgba(98,  182, 239, 1)',
+					'rgba(255, 218, 128, 1)',
+					'rgba(113, 205, 205, 1)',
+					'rgba(170, 128, 252, 1)',
+					'rgba(255, 177, 101, 1)'
+				]
+			}
+		]
+	};
 </script>
 
 <div class="container py-5">
@@ -290,6 +344,51 @@
 				</tr>
 			</tbody>
 		</table>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-12">
+				<h3>Analytics</h3>
+				<p>Please be mindful to yourself, work metrics are not everything what life is about.</p>
+			</div>
+			<div class="col-12 text-center">
+				<p style="background-color:yellow;font-style:italic;">
+					This is currently not implemented yet.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<h4>Total hours: 7.75</h4>
+				<div>
+					<Pie
+						data={pieDataAllEntries}
+						width={100}
+						height={200}
+						options={{ maintainAspectRatio: false }}
+					/>
+				</div>
+			</div>
+			<div class="col text-center">
+				<h4>Billable time ratio: 55%</h4>
+				<div>
+					<Pie
+						data={pieDataSummary}
+						width={100}
+						height={200}
+						options={{ maintainAspectRatio: false }}
+					/>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col text-center">
+				<blockquote class="blockquote">
+					"You can't do a good job if your job is all you do." — Katie Thurmes
+				</blockquote>
+			</div>
+		</div>
 	</section>
 
 	<section>
