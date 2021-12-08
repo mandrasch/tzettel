@@ -261,7 +261,7 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Fictional time</th>
+					<th scope="col" class="text-black-50">Fictional time</th>
 					<th scope="col">Project</th>
 					<th scope="col">Tasks done ✅</th>
 					<th scope="col">Hours</th>
@@ -270,8 +270,8 @@
 			<tbody>
 				{#each $timesheetResults as entry, index}
 					<tr>
-						<th scope="row">{index}</th>
-						<td>{entry.timeFrom} - {entry.timeUntil}</td>
+						<th scope="row">{index + 1}</th>
+						<td class="text-black-50">{entry.timeFrom} - {entry.timeUntil}</td>
 						<td>{entry.project}</td>
 						<td>{entry.notesCombined}</td>
 						<td>
