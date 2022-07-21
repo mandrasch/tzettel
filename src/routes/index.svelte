@@ -345,6 +345,12 @@
 			</tbody>
 		</table>
 	</section>
+	
+	<section>
+		<h3>Parsing summary (for verification)</h3>
+		<p>This is only for debugging, here is what the algorithm detected in your notes. If a line has no color, than it was not recognized:</p>
+		<p>{@html $parseResultHTML}</p>
+	</section>
 
 	<section>
 		<div class="row">
@@ -391,9 +397,4 @@
 		</div>
 	</section>
 
-	<section>
-		<h4>Parsing summary</h4>
-		<p>This is only for debugging, here is what the algorithm detected in your notes:</p>
-		<p>{@html $parseResultHTML}</p>
-	</section>
 </div>
