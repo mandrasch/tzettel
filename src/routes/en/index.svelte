@@ -269,13 +269,13 @@
 </script>
 
 <svelte:head>
-	<html lang="de" />
-	<title>tzettel – Zeiterfassungshilfe</title>
+	<html lang="en" />
+	<title>tzettel – Timesheet Helper</title>
 	<meta
 		name="description"
-		content="Kleiner Helfer für chaotische Arbeitstage, der Aufgaben zu Berichten zusammenfasst."
+		content="Tiny helper for chaotic workdays, merges tasks into clean reports."
 	/>
-	<link rel="alternate" hreflang="en" href="/" />
+	<link rel="alternate" hreflang="de" href="/de" />
 </svelte:head>
 
 <div class="container py-5">

@@ -18,6 +18,12 @@
 				>
 					<span class="navbar-toggler-icon" />
 				</button>
+
+				<nav>
+					<a href="/" rel="alternate" hreflang="de">Deutsch</a> |
+					<a href="/en" rel="alternate" hreflang="en">English</a>
+				</nav>
+
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<!-- <li class="nav-item">
