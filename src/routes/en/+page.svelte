@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import TimesheetView from '../../components/TimesheetView.svelte';
 </script>
 
@@ -8,7 +9,7 @@
 		name="description"
 		content="A tiny helper for chaotic workdays: groups tasks by hashtags and calculates the total time per project – all locally in your browser."
 	/>
-	<link rel="alternate" hreflang="de" href="/" />
+	<link rel="alternate" hreflang="de" href="{base}/" />
 </svelte:head>
 
 <TimesheetView

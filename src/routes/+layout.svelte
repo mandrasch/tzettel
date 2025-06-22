@@ -17,7 +17,7 @@
 <footer class="mt-auto py-4 bg-white">
 	<div class="max-w-6xl mx-auto px-4 text-center text-gray-700 text-sm">
 		<a
-			href="/imprint-privacy"
+			href="{base}/imprint-privacy"
 			class="text-gray-500 hover:text-gray-700 underline underline-offset-2"
 		>
 			Impressum & Datenschutz
