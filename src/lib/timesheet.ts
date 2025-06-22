@@ -1,13 +1,15 @@
 import { writable } from 'svelte/store';
 
+export const isProcessing = writable(false);
+
 export const defaultTimesheetNotes = `09:00 - 09:30 Tagesplanung und E-Mail-Check
-09:30 - 10:00 #Standup Team-Standup
-10:00 - 11:45 #ProjektAlpha UI-Wireframe für Dashboard-Modul erstellen
-11:45 - 12:15 #KundeFirmaA Feedback durchgehen und Meeting vorbereiten
+09:30 - 10:00 Team-Standup
+10:00 - 11:45 #ProjektA UI-Wireframe für Dashboard-Modul erstellen
+11:45 - 12:15 #ProjektB Feedback durchgehen und Meeting vorbereiten
 pause
-13:00 - 14:30 #KundeFirmaA Kundengespräch und Besprechungsnotizen
-14:30 - 16:15 #ProjektBeta API-Integration mit internen Tools
-16:15 - 17:00 #KundeFirmaA Präsentationsfolien für Q3 erstellen
+13:00 - 14:30 #ProjektA Kundengespräch und Besprechungsnotizen
+14:30 - 16:15 #ProjektC API-Integration mit internen Tools
+16:15 - 17:00 #ProjektB Präsentationsfolien erstellen
 17:00 - 17:30 Tagesabschluss und Aufgaben für morgen festlegen`;
 
 /*export const defaultTimesheetNotes = `09:00 - 09:30 Morning planning and inbox review
@@ -32,7 +34,10 @@ function getHoursWithLeadingZeros(dt: Date): string {
 	return (dt.getHours() < 10 ? '0' : '') + dt.getHours();
 }
 
-export function parseTimesheet(text: string) {
+export async function parseTimesheet(text: string) {
+	isProcessing.set(true);
+	await new Promise((r) => setTimeout(r, 500)); // small delay for UX
+
 	const regExFindTimeSlotsAndHashtags =
 		/^([01]?\d|2[0-3]):([0-5]\d)\s*-\s*([01]?\d|2[0-3]):([0-5]\d)\s*([#][\w\-]+)?\s*(.*)?$/gm;
 
@@ -102,4 +107,6 @@ export function parseTimesheet(text: string) {
 	}
 	totalWorkMinutes.set(totalMinutes);
 	timesheetResults.set(results);
+
+	isProcessing.set(false);
 }

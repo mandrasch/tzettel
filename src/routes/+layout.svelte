@@ -14,11 +14,24 @@
 	<slot />
 </main>
 
-<footer class="footer mt-auto py-3 bg-white">
-	<div class="container text-center bg-white text-dark">
-		<a href="/imprint-privacy" class="link-secondary">Imprint & Privacy</a> | Made with SvelteKit |
-		Open Source code:
-		<a href="https://github.com/mandrasch/tzettel" class="link-secondary">GitHub</a>
+<footer class="mt-auto py-4 bg-white">
+	<div class="max-w-6xl mx-auto px-4 text-center text-gray-700 text-sm">
+		<a
+			href="/imprint-privacy"
+			class="text-gray-500 hover:text-gray-700 underline underline-offset-2"
+		>
+			Impressum & Datenschutz
+		</a>
+		<span class="mx-2">|</span>
+		Made in Vienna with SvelteKit 🧡
+		<span class="mx-2">|</span>
+		Open Source Code:
+		<a
+			href="https://github.com/mandrasch/tzettel"
+			class="text-gray-500 hover:text-gray-700 underline underline-offset-2"
+		>
+			GitHub
+		</a>
 	</div>
 </footer>
 

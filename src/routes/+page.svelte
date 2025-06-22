@@ -4,7 +4,8 @@
 		timesheetResults,
 		totalWorkMinutes,
 		parseResultLines,
-		parseTimesheet
+		parseTimesheet,
+		isProcessing
 	} from '$lib/timesheet';
 
 	$: $timesheetNotes, parseTimesheet($timesheetNotes);
@@ -14,7 +15,7 @@
 	<title>tzettel – Zeiterfassungshilfe</title>
 	<meta
 		name="description"
-		content="Kleiner Helfer für chaotische Arbeitstage, der Aufgaben anhand von Hashtags gruppiert und die Gesamtzeit pro Projekt berechnet."
+		content="Kleiner Helfer für chaotische Arbeitstage, welcher Aufgaben anhand von Hashtags gruppiert und die Gesamtzeit pro Projekt berechnet."
 	/>
 	<link rel="alternate" hreflang="en" href="/en" />
 </svelte:head>
@@ -23,8 +24,8 @@
 	<header class="mb-8">
 		<h1 class="text-4xl font-bold mb-2">t(ages)zettel 📝</h1>
 		<p class="italic text-gray-600">
-			Kleiner Helfer für chaotische Arbeitstage, er Aufgaben anhand von Hashtags gruppiert und die
-			Gesamtzeit pro Projekt berechnet.
+			Kleiner Helfer für chaotische Arbeitstage, welcher Aufgaben anhand von Hashtags gruppiert und
+			die Gesamtzeit pro Projekt berechnet.
 		</p>
 	</header>
 
@@ -40,9 +41,10 @@
 		<div>
 			<strong>2. Notizen hier einfügen – alles bleibt lokal</strong>
 			<p>
-				Füge deine Einträge in das Textfeld ein. Es findet keine Datenübertragung statt – die
-				Auswertung erfolgt vollständig im Browser. Die berechneten Projektzeiten kannst du
-				anschließend bequem in dein offizielles Zeiterfassungstool übertragen.
+				Füge deine Einträge am Ende des Tages in das Textfeld ein. Es findet keine Datenübertragung
+				statt – die Auswertung erfolgt ausschließlich in deinem Browser. Die berechneten
+				Projektzeiten kannst du anschließend bequem in dein offizielles Zeiterfassungstool
+				übertragen.
 			</p>
 		</div>
 		<!-- <div>
@@ -55,7 +57,8 @@
 	</div>
 
 	<form class="mb-8">
-		<label for="timesheetNotes" class="block font-semibold mb-2">Zeitnotizen einfügen:</label>
+		<label for="timesheetNotes" class="block font-semibold mb-2">Deine Zeit-Notizen einfügen:</label
+		>
 		<textarea
 			id="timesheetNotes"
 			bind:value={$timesheetNotes}
@@ -63,6 +66,10 @@
 			class="w-full p-3 border border-gray-300 rounded-md shadow-sm"
 		/>
 	</form>
+
+	{#if $isProcessing}
+		<div class="text-blue-500 animate-pulse font-medium mb-4">🔄 Verarbeite deine Eingaben...</div>
+	{/if}
 
 	<section class="mb-12">
 		<h2 class="text-2xl font-semibold mb-4">Dein Report</h2>
