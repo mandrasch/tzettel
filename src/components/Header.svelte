@@ -10,8 +10,8 @@
 
 			<!-- Desktop nav -->
 			<nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600">
-				<a href="/" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a>
-				<a href="/en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a>
+				<a href="${base}/" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a>
+				<a href="${base}/en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a>
 			</nav>
 
 			<!-- Mobile hamburger -->
@@ -40,8 +40,8 @@
 		<!-- Mobile dropdown -->
 		{#if isOpen}
 			<nav class="sm:hidden pb-4 space-y-2 text-sm text-gray-700">
-				<a href="/" rel="alternate" hreflang="de" class="block">Deutsch</a>
-				<a href="/en" rel="alternate" hreflang="en" class="block">English</a>
+				<a href="${base}/" rel="alternate" hreflang="de" class="block">Deutsch</a>
+				<a href="${base}/en" rel="alternate" hreflang="en" class="block">English</a>
 			</nav>
 		{/if}
 	</div>
