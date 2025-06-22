@@ -28,7 +28,7 @@
 		</p>
 	</header>
 
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 		<div>
 			<strong>1. Aufgaben notieren mit Uhrzeit & Hashtag</strong>
 			<p>
@@ -41,16 +41,17 @@
 			<strong>2. Notizen hier einfügen – alles bleibt lokal</strong>
 			<p>
 				Füge deine Einträge in das Textfeld ein. Es findet keine Datenübertragung statt – die
-				Auswertung erfolgt vollständig im Browser.
+				Auswertung erfolgt vollständig im Browser. Die berechneten Projektzeiten kannst du
+				anschließend bequem in dein offizielles Zeiterfassungstool übertragen.
 			</p>
 		</div>
-		<div>
+		<!-- <div>
 			<strong>3. Gesamtzeit ins Zeiterfassungssystem übernehmen</strong>
 			<p>
 				Die berechneten Projektzeiten kannst du anschließend bequem in dein offizielles
 				Zeiterfassungstool übertragen.
 			</p>
-		</div>
+		</div>-->
 	</div>
 
 	<form class="mb-8">
