@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-	let isOpen = false;
+	//import { base } from '$app/paths';
+	let isOpen = $state(false);
 </script>
 
 <header class="border-b border-gray-200 bg-white">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center py-4">
-			<a href={`${base}/`} class="text-lg font-semibold text-gray-800 hover:opacity-80">tzettel</a>
+			<a href={`/`} class="text-lg font-semibold text-gray-800 hover:opacity-80">tzettel</a>
 
 			<!-- Desktop nav -->
 			<nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600">
@@ -17,7 +17,7 @@
 			<!-- Mobile hamburger -->
 			<button
 				class="sm:hidden text-gray-700"
-				on:click={() => (isOpen = !isOpen)}
+				onclick={() => (isOpen = !isOpen)}
 				aria-label="Toggle navigation"
 			>
 				<svg

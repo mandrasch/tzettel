@@ -1,4 +1,6 @@
 <script lang="ts">
+	// import { run } from 'svelte/legacy';
+
 	import {
 		timesheetNotes,
 		timesheetResults,
@@ -8,23 +10,50 @@
 		isProcessing
 	} from '$lib/timesheet';
 
-	export let subtitle: string;
-	export let step1Title: string;
-	export let step1Text: string;
-	export let step2Title: string;
-	export let step2Text: string;
-	export let textareaLabel: string;
-	export let textareaPlaceholder: string;
-	export let processingText: string;
-	export let reportTitle: string;
-	export let colProject: string;
-	export let colNotes: string;
-	export let colHours: string;
-	export let totalLabel: string;
-	export let debugTitle: string;
-	export let debugDescription: string;
 
-	$: $timesheetNotes, parseTimesheet($timesheetNotes);
+	// $: parseTimesheet(timesheetNotes); // reactive!
+
+	import { parse } from 'svelte/compiler';
+
+	interface Props {
+		subtitle: string;
+		step1Title: string;
+		step1Text: string;
+		step2Title: string;
+		step2Text: string;
+		textareaLabel: string;
+		textareaPlaceholder: string;
+		processingText: string;
+		reportTitle: string;
+		colProject: string;
+		colNotes: string;
+		colHours: string;
+		totalLabel: string;
+		debugTitle: string;
+		debugDescription: string;
+	}
+
+	let {
+		subtitle,
+		step1Title,
+		step1Text,
+		step2Title,
+		step2Text,
+		textareaLabel,
+		textareaPlaceholder,
+		processingText,
+		reportTitle,
+		colProject,
+		colNotes,
+		colHours,
+		totalLabel,
+		debugTitle,
+		debugDescription
+	}: Props = $props();
+
+	/*run(() => {
+		$timesheetNotes, parseTimesheet($timesheetNotes);
+	});*/
 </script>
 
 <div class="max-w-6xl mx-auto p-6">
@@ -67,21 +96,20 @@
 		</label>
 		<textarea
 			id="timesheetNotes"
-			bind:value={$timesheetNotes}
+            bind:value={timesheetNotes}
 			rows="6"
 			class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400"
 			placeholder={textareaPlaceholder}
-		/>
+		></textarea>
 	</form>
 
 	<!-- Processing animation -->
-	{#if $isProcessing}
+	{#if isProcessing}
 		<div class="flex items-center text-blue-600 gap-2 mb-6 animate-pulse">
 			<svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4" />
 				<path
-					class="opacity-75"
-					fill="currentColor"
+					class="opacity-75" fill="currentColor"
 					d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
 				/>
 			</svg>
@@ -102,17 +130,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each $timesheetResults as entry, index}
-					<tr class="border-b hover:bg-gray-50">
-						<td class="p-2">{index + 1}</td>
-						<td class="p-2">{entry.project}</td>
-						<td class="p-2">{entry.notesCombined}</td>
-						<td class="p-2">{(entry.totalMinutes / 60).toFixed(2)}</td>
-					</tr>
-				{/each}
+                {#if timesheetResults }
+                    {#each timesheetResults as entry, index}
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-2">{index + 1}</td>
+                            <td class="p-2">{entry.project}</td>
+                            <td class="p-2">{entry.notesCombined}</td>
+                            <td class="p-2">{(entry.totalMinutes / 60).toFixed(2)}</td>
+                        </tr>
+                    {/each}
+                {/if}
 				<tr class="font-bold bg-gray-50">
 					<td colspan="3" class="p-2 text-right">{totalLabel}</td>
-					<td class="p-2">{($totalWorkMinutes / 60).toFixed(2)}</td>
+					<td class="p-2">{(totalWorkMinutes / 60).toFixed(2)}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -125,24 +155,26 @@
 			{debugDescription}
 		</p>
 		<div class="bg-gray-100 p-4 rounded text-sm space-y-1">
-			{#each $parseResultLines as line}
-				{#if line.raw}
-					<p class="text-gray-500 italic">{line.raw}</p>
-				{:else}
-					<p>
-						<span class="text-blue-600 font-semibold">{line.startHour}</span>:
-						<span class="text-blue-600">{line.startMin}</span> -
-						<span class="text-blue-600 font-semibold">{line.endHour}</span>:
-						<span class="text-blue-600">{line.endMin}</span>
-						{#if line.hashtag}
-							<span class="ml-2 bg-cyan-200 text-black px-1 rounded">{line.hashtag}</span>
-						{/if}
-						{#if line.notes}
-							<span class="ml-2 text-gray-700">{line.notes}</span>
-						{/if}
-					</p>
-				{/if}
-			{/each}
+
+                {#each parseResultLines as line}
+                    {#if line.raw}
+                        <p class="text-gray-500 italic">{line.raw}</p>
+                    {:else}
+                        <p>
+                            <span class="text-blue-600 font-semibold">{line.startHour}</span>:
+                            <span class="text-blue-600">{line.startMin}</span> -
+                            <span class="text-blue-600 font-semibold">{line.endHour}</span>:
+                            <span class="text-blue-600">{line.endMin}</span>
+                            {#if line.hashtag}
+                                <span class="ml-2 bg-cyan-200 text-black px-1 rounded">{line.hashtag}</span>
+                            {/if}
+                            {#if line.notes}
+                                <span class="ml-2 text-gray-700">{line.notes}</span>
+                            {/if}
+                        </p>
+                    {/if}
+                {/each}
+
 		</div>
 	</section>
 </div>
