@@ -16,7 +16,7 @@
 <TimesheetView
 	subtitle="Ein smarter Tageszettel für chaotische Arbeitstage: Gruppiert Aufgaben nach Hashtags und berechnet automatisch die Gesamtzeit pro Projekt – und das komplett lokal im Browser."
 	step1Title="1. Aufgaben mit Uhrzeit & Hashtag notieren"
-	step1Text="Erfasse deine Tätigkeiten z. B. in Notepad++, Obsidian oder deinem Lieblingstool: Notiere die Start-Uhrzeit, die End-Uhrzeit und den Hashtag je Aufgbe/Projekte. Einträge ohne Hashtag werden unter &quot;General&quot; gesammelt."
+	step1Text="Erfasse deine Tätigkeiten z. B. in Notepad++, Obsidian oder deinem Lieblingstool: Notiere die Start-Uhrzeit, die End-Uhrzeit und den Hashtag je Aufgbe/Projekte. Für allgemeine Aufgaben brauchst du keinen Hashtag vergeben, diese Tätigkeiten werden später unter 'General' zusammengefasst"
 	step2Title="2. Notizen hier einfügen, Zeitauswertung erhalten"
 	step2Text="tzettel ermittelt die Gesamtzeit pro Aufgabe für dich. Die Verarbeitung erfolgt ausschließlich im Browser. Es werden keine Daten übertragen. Die Ergebnisse kannst du anschließend in dein Zeiterfassungstool übernehmen."
 	textareaLabel="Deine Zeit-Notizen:"
