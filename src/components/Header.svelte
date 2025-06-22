@@ -1,16 +1,22 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
 	let isOpen = false;
 </script>
 
-<header class="bg-amber-200 shadow-md">
+<header class="border-b border-gray-200 bg-white">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center py-4">
-			<a href={`${base}/`} class="text-xl font-bold text-gray-800">tzettel</a>
+			<a href={`${base}/`} class="text-lg font-semibold text-gray-800 hover:opacity-80">tzettel</a>
+
+			<!-- Desktop nav -->
+			<nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600">
+				<a href="/" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a>
+				<a href="/en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a>
+			</nav>
 
 			<!-- Mobile hamburger -->
 			<button
-				class="sm:hidden text-gray-800"
+				class="sm:hidden text-gray-700"
 				on:click={() => (isOpen = !isOpen)}
 				aria-label="Toggle navigation"
 			>
@@ -29,19 +35,12 @@
 					/>
 				</svg>
 			</button>
-
-			<!-- Desktop nav -->
-			<nav class="hidden sm:flex gap-4 text-gray-700 items-center text-sm">
-				<a href="/de" rel="alternate" hreflang="de" class="hover:underline">Deutsch</a>
-				<!-- <span>|</span>
-				<a href="/en" rel="alternate" hreflang="en" class="hover:underline">English</a> -->
-			</nav>
 		</div>
 
-		<!-- Mobile dropdown nav -->
+		<!-- Mobile dropdown -->
 		{#if isOpen}
 			<nav class="sm:hidden pb-4 space-y-2 text-sm text-gray-700">
-				<a href="/de" rel="alternate" hreflang="de" class="block">Deutsch</a>
+				<a href="/" rel="alternate" hreflang="de" class="block">Deutsch</a>
 				<a href="/en" rel="alternate" hreflang="en" class="block">English</a>
 			</nav>
 		{/if}
