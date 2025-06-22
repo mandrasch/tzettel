@@ -17,6 +17,8 @@ Learning project protype built with
 
 ## Todos
 
+- [ ] Add "Submit/Generate" and "Load sample data" buttons instead of pre-filled example
+- [ ] Remove 'node_modules' from scss paths
 - [ ] Integrate bootstrap js for mobile nav toggle, etc.
 - [ ] Add (optional) setting: Show fictional time & add mandatory legal breaks
 - [ ] Add option for non-billable projects, e.g. `#!ProjectName`?
