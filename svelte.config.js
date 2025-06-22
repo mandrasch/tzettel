@@ -33,10 +33,7 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: pathsBase
-		},
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-		// use target: document.body ? => document is not defined error?
+		}
 	}
 };
 
