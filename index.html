@@ -1,143 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de"> 
 	<head>
 		<meta charset="utf-8" />
-		<meta name="description" content="" />
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>tzettel - small helper for daily timesheets 📝</title>
-
 		
-
-		<link rel="modulepreload" href="/tzettel/_app/start-fa66da0b.js">
-		<link rel="modulepreload" href="/tzettel/_app/chunks/vendor-b6dcc517.js">
-		<link rel="modulepreload" href="/tzettel/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/tzettel/_app/pages/__layout.svelte-9f3c90d3.js">
-		<link rel="modulepreload" href="/tzettel/_app/pages/index.svelte-35d7e24a.js">
-		<link rel="stylesheet" href="/tzettel/_app/assets/start-c446e5f0.css">
-		<link rel="stylesheet" href="/tzettel/_app/assets/pages/__layout.svelte-0d4562c3.css">
-
-		<script type="module">
-			import { start } from "/tzettel/_app/start-fa66da0b.js";
-			start({
-				target: document.querySelector("#svelte"),
-				paths: {"base":"/tzettel","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/tzettel/_app/pages/__layout.svelte-9f3c90d3.js"),
-						import("/tzettel/_app/pages/index.svelte-35d7e24a.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "\u002F",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
-			});
-		</script>
+		<link href="./_app/immutable/assets/0.ZEzKqL8v.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.PjctOw42.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BKktG4f6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CZmuBx9L.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/roA_JYE4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CDJeVE6A.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.DHMaRtMQ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/C3Q5VDEM.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.deFbJJt1.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.Dajxx5j5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/uyOxdQjW.js"><title>tzettel – Zeiterfassungshilfe</title><!-- HEAD_svelte-1wt5r8r_START --><!-- HEAD_svelte-1wt5r8r_END --><!-- HEAD_svelte-15x270d_START --><meta name="description" content="Kleiner Helfer für chaotische Arbeitstage, welcher Aufgaben anhand von Hashtags gruppiert und die Gesamtzeit pro Projekt berechnet."><link rel="alternate" hreflang="en" href="./en"><!-- HEAD_svelte-15x270d_END -->
 	</head>
-	<body>
-		<div id="svelte">
-
-
-
-
-<header class="svelte-1k4umzn"><div class="container"><nav class="navbar navbar-expand-lg navbar-light svelte-1k4umzn"><div class="container-fluid"><a class="navbar-brand" href="/tzettel/">tzettel</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul></div></div></nav></div>
-</header>
-
-<main><div class="container py-5"><div class="row"><div class="col-12"><h1 class="py-2">tzettel 📝</h1>
-			<div class="sub-title"><i>Tiny helper for chaotic workdays, which merges tasks for clean reports.</i></div></div></div>
-	<div class="row py-4"><div class="col-md-4"><b>Just paste your timesheet notes!</b><br>You can take them beforehand in Notepad++,
-			TextEdit, Sublime, handwritten, what ever you like. ;)<br><br>
-			</div>
-		<div class="col-md-4"><b>#ProTip 1: Hashtag grouping</b><br>
-			Use a hashtag at the beginning to group entries, e.g. tasks related to a project. These entries
-			will be later combined into one entry.
-		</div>
-		<div class="col-md-4"><b>#ProTip 2: General tasks </b><br>
-			Entries without a hashtag in the beginning will be combined into the &quot;General&quot; entry.
-		</div></div>
-	
-	<form><div class="mb-3"><label for="timesheetNotes" class="form-label">Paste your notes:</label>
-			<textarea class="form-control" id="timesheetNotes" rows="6" cols="75">9:15 - 9:45 Getting organized
-9:45 - 10:00 Stand-Up Meeting
-10:00 - 12:00 #ClientTessa Website prototyping start page
-12:00 - 12:30 #ClientMark CSS Bugfix for category pages
-
-13:30 - 14:15 #ClientTessa Website prototyping details page
-14:15 - 17:10 #ClientMark Javascript fix for fixed header navigation
-17:10 - 18:00 #ClientTessa Website deployment details page
-</textarea></div>
-		</form>
-
-	<section class="py-4"><h2>Your report</h2>
-
-		<table class="table"><thead><tr><th scope="col">#</th>
-					<th scope="col" class="text-black-50">Fictional time</th>
-					<th scope="col">Project</th>
-					<th scope="col">Tasks done ✅</th>
-					<th scope="col">Hours</th></tr></thead>
-			<tbody><tr><th scope="row">1</th>
-						<td class="text-black-50">09:15 - 10:00</td>
-						<td>#General</td>
-						<td>Getting organized, Stand-Up Meeting</td>
-						<td>0.75</td>
-					</tr><tr><th scope="row">2</th>
-						<td class="text-black-50">10:00 - 13:35</td>
-						<td>#ClientTessa</td>
-						<td>Website prototyping start page, Website prototyping details page, Website deployment details page</td>
-						<td>3.58</td>
-					</tr><tr><th scope="row">3</th>
-						<td class="text-black-50">13:35 - 14:05</td>
-						<td>Break</td>
-						<td></td>
-						<td></td>
-					</tr><tr><th scope="row">4</th>
-						<td class="text-black-50">14:05 - 17:30</td>
-						<td>#ClientMark</td>
-						<td>CSS Bugfix for category pages, Javascript fix for fixed header navigation</td>
-						<td>3.42</td>
-					</tr>
-				<tr><th scope="row"></th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><b>7.75</b></td></tr></tbody></table></section>
-	
-	<section><h3>Parsing summary (for verification)</h3>
-		<p>This is only for debugging, here is what the algorithm detected in your notes. If a line has no color, than it was not recognized:</p>
-		<p><!-- HTML_TAG_START --><mark>9</mark>:<mark>15</mark>-<mark>9</mark>:<mark>45</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Getting organized</mark><br><mark>9</mark>:<mark>45</mark>-<mark>10</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;"></mark> <mark>Stand-Up Meeting</mark><br><mark>10</mark>:<mark>00</mark>-<mark>12</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping start page</mark><br><mark>12</mark>:<mark>00</mark>-<mark>12</mark>:<mark>30</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>CSS Bugfix for category pages</mark><br><br><mark>13</mark>:<mark>30</mark>-<mark>14</mark>:<mark>15</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website prototyping details page</mark><br><mark>14</mark>:<mark>15</mark>-<mark>17</mark>:<mark>10</mark> <mark class="hashtag" style="background-color:cyan;">#ClientMark</mark> <mark>Javascript fix for fixed header navigation</mark><br><mark>17</mark>:<mark>10</mark>-<mark>18</mark>:<mark>00</mark> <mark class="hashtag" style="background-color:cyan;">#ClientTessa</mark> <mark>Website deployment details page</mark><br><!-- HTML_TAG_END --></p></section>
-
-	<section><div class="row"><div class="col-12"><h3>Analytics</h3>
-				<p>Please be mindful to yourself, work metrics are not everything what life is about.</p></div>
-			<div class="col-12 text-center"><p style="background-color:yellow;font-style:italic;">This is currently not implemented yet.
-				</p></div></div>
-		<div class="row"><div class="col text-center"><h4>Total hours: 7.75</h4>
-				<div><canvas width="100" height="200"></canvas></div></div>
-			<div class="col text-center"><h4>Billable time ratio: 55%</h4>
-				<div><canvas width="100" height="200"></canvas></div></div></div>
-		<div class="row mt-5"><div class="col text-center"><blockquote class="blockquote">&quot;You can&#39;t do a good job if your job is all you do.&quot; — Katie Thurmes
-				</blockquote></div></div></section></div></main>
-
-<footer class="footer mt-auto py-3 bg-white"><div class="container text-center bg-white text-dark"><a href="/imprint-privacy" class="link-secondary">Imprint &amp; Privacy</a> |
-		<a href="/tzettel/bootstrap-test" class="link-secondary">Bootstrap-Test</a>
-		| (Open) Source code:
-		<a href="https://github.com/mandrasch/tzettel" class="link-secondary">GitHub</a></div>
-</footer>
-
-
-
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">   <header class="border-b border-gray-200 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center py-4"><a href="./" class="text-lg font-semibold text-gray-800 hover:opacity-80" data-svelte-h="svelte-1vhzx3z">tzettel</a>  <nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600" data-svelte-h="svelte-8cgeid"><a href="./" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a> <a href="./en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a></nav>  <button class="sm:hidden text-gray-700" aria-label="Toggle navigation" data-svelte-h="svelte-66iubr"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div>  </div></header> <main> <div class="max-w-6xl mx-auto p-6"><header class="mb-12 text-center"><h1 class="text-5xl font-extrabold tracking-tight text-gray-800 mb-3" data-svelte-h="svelte-r8cz6x">t<sup class="text-orange-500 text-xl">ages</sup>zettel <span class="text-2xl">📝</span></h1> <p class="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">Ein smarter Tageszettel für chaotische Arbeitstage: Gruppiert Aufgaben nach Hashtags und berechnet automatisch die Gesamtzeit pro Projekt – und das komplett lokal im Browser.</p></header>  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"><div class="bg-white shadow-sm border border-gray-100 rounded-xl p-5"><div class="flex items-start gap-3 mb-2"><span class="text-blue-600 text-xl" data-svelte-h="svelte-1lxu8sk">📝</span> <h3 class="text-lg font-semibold">1. Aufgaben mit Uhrzeit &amp; Hashtag notieren</h3></div> <p class="text-gray-600 text-sm">Erfasse deine Tätigkeiten z. B. in Notepad++, Obsidian oder deinem Lieblingstool. Eine Uhrzeit und ein Hashtag pro Projekt reichen aus. Aufgaben ohne Hashtag werden unter "General" gesammelt.</p></div> <div class="bg-white shadow-sm border border-gray-100 rounded-xl p-5"><div class="flex items-start gap-3 mb-2"><span class="text-green-600 text-xl" data-svelte-h="svelte-xq72zk">🕒</span> <h3 class="text-lg font-semibold">2. Notizen hier einfügen, Zeitauswertung erhalten</h3></div> <p class="text-gray-600 text-sm">tzettel ermittelt die Gesamtzeit pro Aufgabe für dich. Die Verarbeitung erfolgt ausschließlich im Browser. Es werden keine Daten übertragen. Die Ergebnisse kannst du anschließend in dein Zeiterfassungstool übernehmen.</p></div></div>  <form class="mb-10"><label for="timesheetNotes" class="block font-semibold mb-2 text-gray-700">Deine Zeit-Notizen:</label> <textarea id="timesheetNotes" rows="6" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400" placeholder="09:00 - 09:30 #ProjektX Beschreibung">09:00 - 09:30 Tagesplanung und E-Mail-Check
+09:30 - 10:00 Team-Standup
+10:00 - 11:45 #ProjektA UI-Wireframe für Dashboard-Modul erstellen
+11:45 - 12:15 #ProjektB Feedback durchgehen und Meeting vorbereiten
+pause
+13:00 - 14:30 #ProjektA Kundengespräch und Besprechungsnotizen
+14:30 - 16:15 #ProjektC API-Integration mit internen Tools
+16:15 - 17:00 #ProjektB Präsentationsfolien erstellen
+17:00 - 17:30 Tagesabschluss und Aufgaben für morgen festlegen</textarea></form>  <div class="flex items-center text-blue-600 gap-2 mb-6 animate-pulse"><svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"></path></svg> <span class="font-medium">Verarbeite deine Eingaben…</span></div>  <section class="mb-12"><h2 class="text-2xl font-semibold mb-4">Dein Report</h2> <table class="table-auto w-full border-collapse text-sm"><thead><tr class="bg-gray-100 text-left text-gray-700"><th class="p-2" data-svelte-h="svelte-92b2vx">#</th> <th class="p-2">Projekt</th> <th class="p-2">Aufgaben</th> <th class="p-2">Stunden</th></tr></thead> <tbody> <tr class="font-bold bg-gray-50"><td colspan="3" class="p-2 text-right">Gesamt</td> <td class="p-2">0.00</td></tr></tbody></table></section>  <section class="mb-12"><h4 class="text-lg font-semibold mb-2">Parsing-Ergebnis</h4> <p class="mb-3 text-sm text-gray-600">Zur Kontrolle: So interpretiert das System deine Eingaben:</p> <div class="bg-gray-100 p-4 rounded text-sm space-y-1"></div></section></div></main> <footer class="mt-auto py-4 bg-white" data-svelte-h="svelte-vizblg"><div class="max-w-6xl mx-auto px-4 text-center text-gray-700 text-sm"><a href="./imprint-privacy" class="text-gray-500 hover:text-gray-700 underline underline-offset-2">Impressum &amp; Datenschutz</a> <span class="mx-2">|</span>
+		Made in Vienna with SvelteKit 🧡
+		<span class="mx-2">|</span>
+		Open Source Code:
+		<a href="https://github.com/mandrasch/tzettel" class="text-gray-500 hover:text-gray-700 underline underline-offset-2">GitHub</a></div> </footer> 
 			
+			<script>
+				{
+					__sveltekit_1hqcpln = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						assets: "/tzettel"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.PjctOw42.js"),
+						import("./_app/immutable/entry/app.DHMaRtMQ.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="./_app/immutable/assets/0.ZEzKqL8v.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.PjctOw42.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BKktG4f6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CZmuBx9L.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/roA_JYE4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CDJeVE6A.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.DHMaRtMQ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/C3Q5VDEM.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.deFbJJt1.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/4.Ct2m3MJj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/uyOxdQjW.js"><title>tzettel – Timesheet Helper</title><!-- HEAD_svelte-1wt5r8r_START --><!-- HEAD_svelte-1wt5r8r_END --><!-- HEAD_svelte-124y7ev_START --><meta name="description" content="A tiny helper for chaotic workdays: groups tasks by hashtags and calculates the total time per project – all locally in your browser."><link rel="alternate" hreflang="de" href="./"><!-- HEAD_svelte-124y7ev_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">   <header class="border-b border-gray-200 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center py-4"><a href="./" class="text-lg font-semibold text-gray-800 hover:opacity-80" data-svelte-h="svelte-1vhzx3z">tzettel</a>  <nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600" data-svelte-h="svelte-8cgeid"><a href="./" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a> <a href="./en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a></nav>  <button class="sm:hidden text-gray-700" aria-label="Toggle navigation" data-svelte-h="svelte-66iubr"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div>  </div></header> <main> <div class="max-w-6xl mx-auto p-6"><header class="mb-12 text-center"><h1 class="text-5xl font-extrabold tracking-tight text-gray-800 mb-3" data-svelte-h="svelte-r8cz6x">t<sup class="text-orange-500 text-xl">ages</sup>zettel <span class="text-2xl">📝</span></h1> <p class="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">A smart timesheet helper for chaotic workdays: Groups tasks by hashtags and automatically calculates total time per project – all locally in your browser.</p></header>  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"><div class="bg-white shadow-sm border border-gray-100 rounded-xl p-5"><div class="flex items-start gap-3 mb-2"><span class="text-blue-600 text-xl" data-svelte-h="svelte-1lxu8sk">📝</span> <h3 class="text-lg font-semibold">1. Write tasks with time &amp; hashtag</h3></div> <p class="text-gray-600 text-sm">Record your tasks in Notepad++, Obsidian, or any editor you like. One time range and one hashtag per project is enough. Tasks without a hashtag will be grouped under “General”.</p></div> <div class="bg-white shadow-sm border border-gray-100 rounded-xl p-5"><div class="flex items-start gap-3 mb-2"><span class="text-green-600 text-xl" data-svelte-h="svelte-xq72zk">🕒</span> <h3 class="text-lg font-semibold">2. Paste your notes here to see totals</h3></div> <p class="text-gray-600 text-sm">tzettel calculates the total time per task group for you. Everything is processed exclusively in your browser – no data is sent anywhere. You can then transfer the results to your official time-tracking tool.</p></div></div>  <form class="mb-10"><label for="timesheetNotes" class="block font-semibold mb-2 text-gray-700">Your time notes:</label> <textarea id="timesheetNotes" rows="6" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400" placeholder="09:00 - 09:30 #ProjectX Description">09:00 - 09:30 Tagesplanung und E-Mail-Check
+09:30 - 10:00 Team-Standup
+10:00 - 11:45 #ProjektA UI-Wireframe für Dashboard-Modul erstellen
+11:45 - 12:15 #ProjektB Feedback durchgehen und Meeting vorbereiten
+pause
+13:00 - 14:30 #ProjektA Kundengespräch und Besprechungsnotizen
+14:30 - 16:15 #ProjektC API-Integration mit internen Tools
+16:15 - 17:00 #ProjektB Präsentationsfolien erstellen
+17:00 - 17:30 Tagesabschluss und Aufgaben für morgen festlegen</textarea></form>  <div class="flex items-center text-blue-600 gap-2 mb-6 animate-pulse"><svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"></path></svg> <span class="font-medium">Processing your input…</span></div>  <section class="mb-12"><h2 class="text-2xl font-semibold mb-4">Your Report</h2> <table class="table-auto w-full border-collapse text-sm"><thead><tr class="bg-gray-100 text-left text-gray-700"><th class="p-2" data-svelte-h="svelte-92b2vx">#</th> <th class="p-2">Project</th> <th class="p-2">Tasks</th> <th class="p-2">Hours</th></tr></thead> <tbody> <tr class="font-bold bg-gray-50"><td colspan="3" class="p-2 text-right">Total</td> <td class="p-2">0.00</td></tr></tbody></table></section>  <section class="mb-12"><h4 class="text-lg font-semibold mb-2">Parsing Result</h4> <p class="mb-3 text-sm text-gray-600">For verification: this is how your input is interpreted:</p> <div class="bg-gray-100 p-4 rounded text-sm space-y-1"></div></section></div></main> <footer class="mt-auto py-4 bg-white" data-svelte-h="svelte-vizblg"><div class="max-w-6xl mx-auto px-4 text-center text-gray-700 text-sm"><a href="./imprint-privacy" class="text-gray-500 hover:text-gray-700 underline underline-offset-2">Impressum &amp; Datenschutz</a> <span class="mx-2">|</span>
+		Made in Vienna with SvelteKit 🧡
+		<span class="mx-2">|</span>
+		Open Source Code:
+		<a href="https://github.com/mandrasch/tzettel" class="text-gray-500 hover:text-gray-700 underline underline-offset-2">GitHub</a></div> </footer> 
+			
+			<script>
+				{
+					__sveltekit_1hqcpln = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						assets: "/tzettel"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.PjctOw42.js"),
+						import("./_app/immutable/entry/app.DHMaRtMQ.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
