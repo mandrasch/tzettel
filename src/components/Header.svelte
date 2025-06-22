@@ -1,41 +1,48 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
+	let isOpen = false;
 </script>
 
-<header>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href={`${base}/`}>tzettel</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
+<header class="border-b border-gray-200 bg-white">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex justify-between items-center py-4">
+			<a href={`${base}/`} class="text-lg font-semibold text-gray-800 hover:opacity-80">tzettel</a>
+
+			<!-- Desktop nav -->
+			<nav class="hidden sm:flex gap-4 items-center text-sm text-gray-600">
+				<a href="/" rel="alternate" hreflang="de" class="hover:text-gray-800">Deutsch</a>
+				<a href="/en" rel="alternate" hreflang="en" class="hover:text-gray-800">English</a>
+			</nav>
+
+			<!-- Mobile hamburger -->
+			<button
+				class="sm:hidden text-gray-700"
+				on:click={() => (isOpen = !isOpen)}
+				aria-label="Toggle navigation"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
 				>
-					<span class="navbar-toggler-icon" />
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<!-- <li class="nav-item">
-							<a class="nav-link active" aria-current="page" href={`${base}/`}>Home</a>
-						</li>
-					 	<li class="nav-item">
-							<a class="nav-link" href={`${base}/about`}>Bootstrap-Test</a>
-						</li> -->
-					</ul>
-				</div>
-			</div>
-		</nav>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					/>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile dropdown -->
+		{#if isOpen}
+			<nav class="sm:hidden pb-4 space-y-2 text-sm text-gray-700">
+				<a href="/" rel="alternate" hreflang="de" class="block">Deutsch</a>
+				<a href="/en" rel="alternate" hreflang="en" class="block">English</a>
+			</nav>
+		{/if}
 	</div>
 </header>
-
-<style lang="scss">
-	header,
-	.navbar {
-		background-color: #fad7a0; // TODO: put in var
-	}
-</style>

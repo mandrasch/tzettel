@@ -18,6 +18,7 @@ jobs:
           npm ci
           npm run build
         env:
+          #important: deploy to subdirectory, relative links must be differend
           PATHS_BASE: '/${{ github.event.repository.name }}'
 
       - name: Deploy 🚀
